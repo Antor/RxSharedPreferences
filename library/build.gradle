@@ -52,8 +52,13 @@ bintray {
         issueTrackerUrl = packaging.issueTrackerUrl
         vcsUrl = packaging.vcsUrl
 
+        githubRepo = packaging.githubRepo
+
         version {
             name = packaging.versionName
+            desc = packaging.versionDescription
+
+            vcsTag = packaging.vcsTag
         }
     }
 }
@@ -66,7 +71,7 @@ publishing {
             artifact javadocsJar
             artifact sourcesJar
 
-            groupId  packaging.groupId
+            groupId packaging.groupId
             artifactId packaging.artifactId
             version packaging.versionName
 

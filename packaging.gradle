@@ -5,10 +5,15 @@ ext {
 
             versionCode : 1,
             versionName : '0.1.1-SNAPSHOT',
+            versionDescription : 'SNAPSHOT',
+            vcsTag : 'v0.1.1-SNAPSHOT',
+
 
             websiteUrl : 'https://github.com/Antor/RxSharedPreferences',
             issueTrackerUrl : 'https://github.com/Antor/RxSharedPreferences/issues',
             vcsUrl : 'https://github.com/Antor/RxSharedPreferences',
+
+            githubRepo : 'Antor/RxSharedPreferences',
 
             bintrayRepo : 'maven',
 
