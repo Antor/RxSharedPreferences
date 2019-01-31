@@ -4,7 +4,7 @@ ext {
             artifactId : 'rxsharedpreferences',
 
             versionCode : 1,
-            versionName : '0.1.0-SNAPSHOT',
+            versionName : '0.1.0',
 
             websiteUrl : 'https://github.com/Antor/RxSharedPreferences',
             issueTrackerUrl : 'https://github.com/Antor/RxSharedPreferences/issues',
