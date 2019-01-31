@@ -1,0 +1,26 @@
+ext {
+    packaging = [
+            groupId : 'com.gravityray',
+            artifactId : 'rxsharedpreferences',
+
+            versionCode : 1,
+            versionName : '0.1.0-SNAPSHOT',
+
+            websiteUrl : 'https://github.com/Antor/RxSharedPreferences',
+            issueTrackerUrl : 'https://github.com/Antor/RxSharedPreferences/issues',
+            vcsUrl : 'https://github.com/Antor/RxSharedPreferences',
+
+            bintrayRepo : 'maven',
+
+            name : 'RxSharedPreferences',
+            description : 'RxJava 2 adapter for SharedPreferences API in Android',
+
+            bintrayLicense : 'MIT',
+
+            pomLicenseName : 'MIT License',
+            pomLicenseUrl : 'http://www.opensource.org/licenses/mit-license.php',
+
+            developerName : 'Andrei Tsiatsera',
+            developerEmail : 'Paladin26@narod.ru'
+    ]
+}
