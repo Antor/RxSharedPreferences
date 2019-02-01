@@ -9,7 +9,7 @@ ext {
             bintray : '1.8.4',
             androidMavenPublish : '3.6.2',
 
-            rxjava : '2.1.12',
+            rxjava : '2.2.6',
             supportAnnotations : '1.0.1'
     ]
 
