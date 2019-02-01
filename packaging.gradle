@@ -3,10 +3,11 @@ ext {
             groupId : 'com.gravityray',
             artifactId : 'rxsharedpreferences',
 
-            versionCode : 1,
-            versionName : '0.1.1-SNAPSHOT',
-            versionDescription : 'SNAPSHOT',
-            vcsTag : 'v0.1.1-SNAPSHOT',
+            versionCode : 2,
+            versionName : '0.2.0',
+            versionDescription : 'Added methods for simpler access to SharedPreferences values with less boilerplate. ' +
+                    'Improved documentation.',
+            vcsTag : 'v0.2.0',
 
 
             websiteUrl : 'https://github.com/Antor/RxSharedPreferences',
