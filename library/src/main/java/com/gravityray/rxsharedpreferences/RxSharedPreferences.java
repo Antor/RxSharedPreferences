@@ -1,7 +1,8 @@
 package com.gravityray.rxsharedpreferences;
 
 import android.content.SharedPreferences;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 import java.util.Set;
 
