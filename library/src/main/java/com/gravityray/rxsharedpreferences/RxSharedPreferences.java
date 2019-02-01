@@ -2,10 +2,10 @@ package com.gravityray.rxsharedpreferences;
 
 import android.content.SharedPreferences;
 
-import androidx.annotation.NonNull;
-
 import java.util.Set;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import io.reactivex.Observable;
 
 
@@ -16,7 +16,7 @@ public class RxSharedPreferences {
     public static Observable<String> getStringValue(
             @NonNull SharedPreferences sharedPreferences,
             @NonNull String key,
-            String defaultValue) {
+            @NonNull String defaultValue) {
         return getString(sharedPreferences, key, defaultValue)
                 .map(SharedPreferencesValueChangedEvent::getValue);
     }
@@ -25,7 +25,7 @@ public class RxSharedPreferences {
     public static SharedPreferencesValueObservable<String> getString(
             @NonNull SharedPreferences sharedPreferences,
             @NonNull String key,
-            String defaultValue) {
+            @Nullable String defaultValue) {
         return new SharedPreferencesValueObservable<>(
                 sharedPreferences,
                 key,
@@ -37,7 +37,7 @@ public class RxSharedPreferences {
     public static Observable<Set<String>> getStringSetValue(
             @NonNull SharedPreferences sharedPreferences,
             @NonNull String key,
-            Set<String> defaultValue) {
+            @NonNull Set<String> defaultValue) {
         return getStringSet(sharedPreferences, key, defaultValue)
                 .map(SharedPreferencesValueChangedEvent::getValue);
     }
@@ -46,7 +46,7 @@ public class RxSharedPreferences {
     public static SharedPreferencesValueObservable<Set<String>> getStringSet(
             @NonNull SharedPreferences sharedPreferences,
             @NonNull String key,
-            Set<String> defaultValue) {
+            @Nullable Set<String> defaultValue) {
         return new SharedPreferencesValueObservable<>(
                 sharedPreferences,
                 key,

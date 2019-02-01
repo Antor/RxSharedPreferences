@@ -4,11 +4,14 @@ import android.content.SharedPreferences;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
 
+@SuppressWarnings("unused")
 public class SharedPreferencesValueObservable<T>
         extends Observable<SharedPreferencesValueChangedEvent<T>> {
 
@@ -23,11 +26,11 @@ public class SharedPreferencesValueObservable<T>
 
         private final AtomicBoolean disposed;
 
-        public Listener(SharedPreferences sharedPreferences,
-                String observedKey,
-                T defaultValue,
-                SharedPreferencesGetValueAdapter<T> sharedPreferencesGetValueAdapter,
-                Observer<? super SharedPreferencesValueChangedEvent<T>> observer) {
+        Listener(@NonNull SharedPreferences sharedPreferences,
+                @NonNull String observedKey,
+                @Nullable T defaultValue,
+                @NonNull SharedPreferencesGetValueAdapter<T> sharedPreferencesGetValueAdapter,
+                @NonNull Observer<? super SharedPreferencesValueChangedEvent<T>> observer) {
             this.sharedPreferences = sharedPreferences;
             this.observedKey = observedKey;
             this.defaultValue = defaultValue;
@@ -73,10 +76,10 @@ public class SharedPreferencesValueObservable<T>
     private final SharedPreferencesGetValueAdapter<T> sharedPreferencesGetValueAdapter;
 
     SharedPreferencesValueObservable(
-            SharedPreferences sharedPreferences,
-            String key,
-            T defaultValue,
-            SharedPreferencesGetValueAdapter<T> sharedPreferencesGetValueAdapter) {
+            @NonNull SharedPreferences sharedPreferences,
+            @NonNull String key,
+            @Nullable T defaultValue,
+            @NonNull SharedPreferencesGetValueAdapter<T> sharedPreferencesGetValueAdapter) {
         this.sharedPreferences = sharedPreferences;
         this.key = key;
         this.defaultValue = defaultValue;
@@ -96,6 +99,7 @@ public class SharedPreferencesValueObservable<T>
                         !sharedPreferences.contains(key)));
     }
 
+    @NonNull
     public Observable<SharedPreferencesValueChangedEvent<T>> skipInitial() {
         return new Observable<SharedPreferencesValueChangedEvent<T>>() {
             @Override
@@ -107,7 +111,7 @@ public class SharedPreferencesValueObservable<T>
     }
 
     private void subscribeListener(
-            Observer<? super SharedPreferencesValueChangedEvent<T>> observer) {
+            @NonNull Observer<? super SharedPreferencesValueChangedEvent<T>> observer) {
         Listener listener = new Listener<>(
                 sharedPreferences,
                 key,
