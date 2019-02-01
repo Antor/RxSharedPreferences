@@ -14,6 +14,7 @@ ext {
             vcsUrl : 'https://github.com/Antor/RxSharedPreferences',
 
             githubRepo : 'Antor/RxSharedPreferences',
+            githubReleaseNotesFile : 'CHANGES.md',
 
             bintrayRepo : 'maven',
 
