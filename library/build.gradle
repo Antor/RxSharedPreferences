@@ -36,8 +36,8 @@ dependencies {
 }
 
 bintray {
-    user = bintray_user
-    key = bintray_api_key
+    user = hasProperty('bintray_user') ? bintray_user : ''
+    key = hasProperty('bintray_api_key') ? bintray_api_key : ''
 
     publications = ['library']
 
